@@ -20,16 +20,14 @@ public class SenderApplication {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void trigger() throws MessagingException {
-		// mailService.mail("sriramsanath002@gmail.com", "springmailsender", "spring
-		// boot mail server sender");
-		// mailService.mails("sriramsanath002@gmail.com", "springmailsenderattachment",
-		// "spring boot mail server sender attachment",
-		// "c://Users//Dell//Downloads//WhatsApp Image 2024-08-20 at 8.41.10 PM.jpeg");
+		
+	mailService.mail("recipentent1@gmail.com", "springmailsender", "springboot mail server sender");
+	mailService.mails("recipentent1@gmail.com", "springmailsenderattachment","spring boot mail server sender attachment","path....");
 
-		String[] to = { "sriramsanath002@gmail.com", "sriramsanath842@gmail.com" };
+		String[] to = { "recipentent1@gmail.com","reciptent2@gmail.com",.......};
 		String subject = "Subject: SpringBoot Application";
 		String text = "This email is sent to multiple recipients when the application is ready.";
-		String attachment = "c://Users//Dell//Downloads//demofile.jpg";
+		String attachment = "path.....";
 
 		try {
 			mailService.multiple(to, subject, text, attachment);
